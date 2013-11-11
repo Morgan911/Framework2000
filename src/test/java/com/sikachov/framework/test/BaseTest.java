@@ -22,7 +22,7 @@ public abstract class BaseTest {
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		driver.get(BASE_ADDRESS);
 	}
-	
+	 
 	public void goToMainPage(){
 		log("open main page");
 		driver.get(BASE_ADDRESS);

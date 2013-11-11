@@ -17,7 +17,7 @@ public abstract class BaseTest {
 	@BeforeClass
 	public void setUp() {
 		DesiredCapabilities caps =new DesiredCapabilities();
-		caps.setBrowserName(System.getProperty("webdriver.browser", "chrome"));
+		caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
 		driver = WebDriverFactory.getDriver(caps);
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		driver.get(BASE_ADDRESS);

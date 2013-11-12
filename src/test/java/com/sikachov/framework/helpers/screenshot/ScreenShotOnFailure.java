@@ -14,6 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
+import static com.sikachov.framework.helpers.BaseHelper.log;
 
 import com.sikachov.framework.factories.WebDriverFactory;
 
@@ -21,7 +22,8 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 
     @Override
     public void onTestFailure(ITestResult tr) {
-	System.out.println("SCREEENSHOOOT");
+
+	log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 	DesiredCapabilities caps = new DesiredCapabilities();
 	caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
 

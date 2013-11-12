@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import com.sikachov.framework.configs.Config;
+import com.sikachov.framework.factories.MyPageFactory;
 import com.sikachov.framework.pages.ComparationPage;
 import com.sikachov.framework.pages.MainPage;
 import com.sikachov.framework.pages.Page;
@@ -16,46 +17,53 @@ import com.sikachov.framework.pages.ProductInfoPage;
 import com.sikachov.framework.pages.ProductPage;
 import com.sikachov.framework.pages.SearchResultPage;
 
-public class NavHelper extends BaseHelper{
-	
-	public static ProductPage getProductPage(WebDriver driver, String product){
-		log("open Product Page " + product);
-		driver.get(Config.BASE_ADDRESS);
-		MainPage p = PageFactory.initElements(driver, MainPage.class);
-		return p.goToProductPage(driver, product);
+public class NavHelper extends BaseHelper {
+
+    public static MainPage getMainPage(WebDriver driver, String product) {
+	log("open Product Page " + product);
+	driver.get(Config.BASE_ADDRESS);
+	return MyPageFactory.getPage(driver, MainPage.class);
+    }
+
+    public static ProductPage getProductPage(WebDriver driver, String product) {
+	log("open Product Page " + product);
+
+	return getMainPage(driver, product).goToProductPage(driver, product);
+    }
+
+    public static ProductInfoPage getProductInfoPage(WebDriver driver,
+	    ProductPage p, String productName) {
+	log("open Product Info Page " + productName);
+	p.openProduct(productName);
+	return PageFactory.initElements(driver, ProductInfoPage.class);
+    }
+
+    public static SearchResultPage getSearchResultPage(WebDriver driver,
+	    Page p, String request) {
+	log("open Search Result Page for request " + request);
+	p.search(request);
+	return PageFactory.initElements(driver, SearchResultPage.class);
+    }
+
+    public static PricesPage getPricesPage(WebDriver driver, ProductPage p) {
+	log("open Prices Page");
+	p.goToPrices();
+	return PageFactory.initElements(driver, PricesPage.class);
+    }
+
+    public static ComparationPage getComparationPage(WebDriver driver,
+	    ProductPage p, int num) {
+	log("open Comparation Page");
+	List<WebElement> l = p.getWebElementProducts(num);
+	for (WebElement w : l) {
+	    w.findElement(By.className("compare_add_link")).click();
 	}
-	
-	public static ProductInfoPage getProductInfoPage(WebDriver driver, ProductPage p, String productName){
-		log("open Product Info Page " + productName);
-		p.openProduct(productName);
-		return PageFactory.initElements(driver, ProductInfoPage.class);
+	try {
+	    l.get(0).findElement(By.className("head-compare-link")).click();
+	} catch (Exception e) {
+	    return null;
 	}
-	
-	public static SearchResultPage getSearchResultPage(WebDriver driver, Page p, String request){
-		log("open Search Result Page for request " + request);
-		p.search(request);
-		return PageFactory.initElements(driver, SearchResultPage.class);
-	}
-	
-	public static PricesPage getPricesPage(WebDriver driver, ProductPage p){
-		log("open Prices Page");
-		p.goToPrices();
-		return PageFactory.initElements(driver, PricesPage.class);	
-	}
-	
-	
-	public static ComparationPage getComparationPage(WebDriver driver, ProductPage p, int num){
-		log("open Comparation Page");
-		List<WebElement> l = p.getWebElementProducts(num);
-		for (WebElement w : l) {
-			w.findElement(By.className("compare_add_link")).click();
-		}
-		try{
-		l.get(0).findElement(By.className("head-compare-link")).click();
-		}catch(Exception e){
-			return null;
-		}
-		return PageFactory.initElements(driver, ComparationPage.class);	
-	}
+	return PageFactory.initElements(driver, ComparationPage.class);
+    }
 
 }

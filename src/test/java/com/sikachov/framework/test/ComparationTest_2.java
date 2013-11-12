@@ -14,7 +14,6 @@ public class ComparationTest_2 extends BaseTest {
 
 	@Test(dataProvider = "catProvider", dataProviderClass = TestDataProvider.class)
 	public void sameParamsTest(String category) {
-		goToMainPage();
 		ProductPage productPage = NavHelper.getProductPage(driver, category);
 		p = NavHelper.getComparationPage(driver, productPage, 2);
 		CompareHelper.verifySameParams(p.getSameParams());

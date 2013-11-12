@@ -19,16 +19,14 @@ import com.sikachov.framework.pages.SearchResultPage;
 
 public class NavHelper extends BaseHelper {
 
-    public static MainPage getMainPage(WebDriver driver, String product) {
-	log("open Product Page " + product);
+    public static MainPage getMainPage(WebDriver driver) {
 	driver.get(Config.BASE_ADDRESS);
 	return MyPageFactory.getPage(driver, MainPage.class);
     }
 
     public static ProductPage getProductPage(WebDriver driver, String product) {
 	log("open Product Page " + product);
-
-	return getMainPage(driver, product).goToProductPage(driver, product);
+	return getMainPage(driver).goToProductPage(driver, product);
     }
 
     public static ProductInfoPage getProductInfoPage(WebDriver driver,

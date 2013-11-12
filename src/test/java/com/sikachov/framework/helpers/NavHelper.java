@@ -10,9 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.sikachov.framework.configs.Config;
 import com.sikachov.framework.pages.ComparationPage;
 import com.sikachov.framework.pages.MainPage;
-import com.sikachov.framework.pages.NameSortedProductPage;
 import com.sikachov.framework.pages.Page;
-import com.sikachov.framework.pages.PriceSortedProductPage;
 import com.sikachov.framework.pages.PricesPage;
 import com.sikachov.framework.pages.ProductInfoPage;
 import com.sikachov.framework.pages.ProductPage;
@@ -45,17 +43,6 @@ public class NavHelper extends BaseHelper{
 		return PageFactory.initElements(driver, PricesPage.class);	
 	}
 	
-	public static PriceSortedProductPage getPriceSortedProductPage(WebDriver driver, ProductPage p){
-		log("open Price Sorted Product Page");
-		p.sortByPrice();
-		return PageFactory.initElements(driver, PriceSortedProductPage.class);	
-	}
-	
-	public static NameSortedProductPage getNameSortedProductPage(WebDriver driver, ProductPage p){
-		log("open Name Sorted Product Page");
-		p.sortByName();
-		return PageFactory.initElements(driver, NameSortedProductPage.class);	
-	}
 	
 	public static ComparationPage getComparationPage(WebDriver driver, ProductPage p, int num){
 		log("open Comparation Page");

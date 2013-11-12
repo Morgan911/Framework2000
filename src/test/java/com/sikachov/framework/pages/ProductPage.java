@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.sikachov.framework.objects.Product;
 
@@ -128,14 +129,16 @@ public class ProductPage extends Page {
 	return list;
     }
 
-    public void sortByName() {
+    public ProductPage sortByName() {
 	log("sort by name click");
 	sortByName.click();
+	return PageFactory.initElements(driver, ProductPage.class);
     }
 
-    public void sortByPrice() {
+    public ProductPage sortByPrice() {
 	log("sort by price click");
 	sortByPrice.click();
+	return PageFactory.initElements(driver, ProductPage.class);
     }
 
     public void openAllProducers() {

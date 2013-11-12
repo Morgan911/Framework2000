@@ -23,12 +23,10 @@ public class FridgeSortTest_1 extends BaseTest {
 		
 		productPage = NavHelper.getProductPage(driver, category);
 		
-		List<Product> productsSortedByName = NavHelper
-				.getNameSortedProductPage(driver, productPage).getProducts();
+		List<Product> productsSortedByName = productPage.sortByName().getProducts();
 		Collections.copy(productsUnsorted, productsSortedByName);
 		SortHelper.verifyNameSorting(productsUnsorted, productsSortedByName);
-		List<Product> productsSortedByPrice = NavHelper
-				.getPriceSortedProductPage(driver, productPage).getProducts();
+		List<Product> productsSortedByPrice =productPage.sortByPrice().getProducts();
 		SortHelper.verifyPriceSorting(productsUnsorted, productsSortedByPrice);
 	}
 

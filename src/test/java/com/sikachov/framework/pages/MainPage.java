@@ -13,7 +13,7 @@ public class MainPage extends Page {
 	super(driver);
     }
 
-	public ProductPage goToProductPage(WebDriver driver, String category) {
+	public ProductPage goToProductPage(String category) {
 		log("open product page");
 		driver.findElement(By.linkText(category)).click();
 		return PageFactory.initElements(driver, ProductPage.class);

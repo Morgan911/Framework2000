@@ -24,7 +24,7 @@ public class NavHelper extends BaseHelper{
 		log("open Product Page " + product);
 		driver.get(Config.BASE_ADDRESS);
 		MainPage p = PageFactory.initElements(driver, MainPage.class);
-		return p.goToProductPage(driver, product);
+		return p.goToProductPage(product);
 	}
 	
 	public static ProductInfoPage getProductInfoPage(WebDriver driver, ProductPage p, String productName){

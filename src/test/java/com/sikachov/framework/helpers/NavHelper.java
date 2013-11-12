@@ -5,9 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
-import com.sikachov.framework.configs.Config;
 import com.sikachov.framework.factories.MyPageFactory;
 import com.sikachov.framework.pages.ComparationPage;
 import com.sikachov.framework.pages.MainPage;
@@ -42,8 +40,7 @@ public class NavHelper extends BaseHelper {
 
     public static PricesPage getPricesPage(WebDriver driver, ProductPage p) {
 	log("open Prices Page");
-	p.goToPrices();
-	return PageFactory.initElements(driver, PricesPage.class);
+	return p.goToPrices();
     }
 
     public static ComparationPage getComparationPage(WebDriver driver,
@@ -58,7 +55,7 @@ public class NavHelper extends BaseHelper {
 	} catch (Exception e) {
 	    return null;
 	}
-	return PageFactory.initElements(driver, ComparationPage.class);
+	return MyPageFactory.getPage(driver, ComparationPage.class);
     }
 
 }

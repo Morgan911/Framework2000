@@ -154,9 +154,10 @@ public class ProductPage extends Page {
 	return PageFactory.initElements(driver, ProductPage.class);
     }
 
-    public void goToPrices() {
+    public PricesPage goToPrices(){
 	log("open prices page");
 	link.click();
+	return MyPageFactory.getPage(driver, PricesPage.class);	
     }
 
     public void filter(String f1, String f2) {

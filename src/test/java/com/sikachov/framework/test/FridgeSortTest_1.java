@@ -15,20 +15,18 @@ import com.sikachov.framework.objects.Product;
 import com.sikachov.framework.pages.ProductPage;
 
 public class FridgeSortTest_1 extends BaseTest {
-	ProductPage productPage;
-	List<Product> productsUnsorted;
 
-	@Test(dataProvider = "catProvider", dataProviderClass = TestDataProvider.class)
-	public void fridgeSortTest(String category) {
-		
-		productPage = NavHelper.getProductPage(driver, category);
-		
-		List<Product> productsSortedByName = productPage.sortByName().getProducts();
-		Collections.copy(productsUnsorted, productsSortedByName);
-		SortHelper.verifyNameSorting(productsUnsorted, productsSortedByName);
-		List<Product> productsSortedByPrice =productPage.sortByPrice().getProducts();
-		SortHelper.verifyPriceSorting(productsUnsorted, productsSortedByPrice);
-	}
-
+    @Test(dataProvider = "catProvider", dataProviderClass = TestDataProvider.class)
+    public void fridgeSortTest(String category) {
+	List<Product> productsUnsorted = null;
+	ProductPage productPage = NavHelper.getProductPage(driver, category);
+	List<Product> productsSortedByName = productPage.sortByName()
+		.getProducts();
+	Collections.copy(productsUnsorted, productsSortedByName);
+	SortHelper.verifyNameSorting(productsUnsorted, productsSortedByName);
+	List<Product> productsSortedByPrice = productPage.sortByPrice()
+		.getProducts();
+	SortHelper.verifyPriceSorting(productsUnsorted, productsSortedByPrice);
+    }
 
 }

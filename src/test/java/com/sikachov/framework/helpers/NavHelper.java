@@ -26,7 +26,7 @@ public class NavHelper extends BaseHelper {
 
     public static ProductPage getProductPage(WebDriver driver, String product) {
 	log("open Product Page " + product);
-	return getMainPage(driver).goToProductPage(driver, product);
+	return getMainPage(driver).goToProductPage(product);
     }
 
     public static ProductInfoPage getProductInfoPage(WebDriver driver,

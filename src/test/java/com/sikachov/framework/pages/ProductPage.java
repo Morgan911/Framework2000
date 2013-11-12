@@ -180,7 +180,7 @@ public class ProductPage extends Page {
 		.getAttribute("href");
 	System.out.println("HREEEEEEEEEFFFF = >>> " + href);
 	price = price.replace(" ", "");
-	price = price.substring(0, price.indexOf("�"));
+	price = price.substring(0, price.indexOf("г"));
 	Double dprice = Double.parseDouble(price);
 	Product tmp = new Product(name, href, dprice, description);
 	return tmp;

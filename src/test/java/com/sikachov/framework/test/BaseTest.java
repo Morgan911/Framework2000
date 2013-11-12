@@ -8,11 +8,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 
+import com.sikachov.framework.configs.Config;
 import com.sikachov.framework.factories.WebDriverFactory;
 public abstract class BaseTest {
-	private static final String BASE_ADDRESS = "http://pn.com.ua/";
 	protected WebDriver driver;
-
 
 	@BeforeClass
 	public void setUp() {
@@ -20,12 +19,12 @@ public abstract class BaseTest {
 		caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
 		driver = WebDriverFactory.getDriver(caps);
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-		driver.get(BASE_ADDRESS);
+		goToMainPage();
 	}
 	 
 	public void goToMainPage(){
 		log("open main page");
-		driver.get(BASE_ADDRESS);
+		driver.get(Config.BASE_ADDRESS);
 	}
 
 	

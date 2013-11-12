@@ -2,6 +2,6 @@ package com.sikachov.framework.configs;
 
 public class Config {
 	
-	public static String category;
+	public static final String BASE_ADDRESS = "http://pn.com.ua/";
 
 }

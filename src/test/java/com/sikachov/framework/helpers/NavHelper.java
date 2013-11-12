@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import com.sikachov.framework.configs.Config;
 import com.sikachov.framework.pages.ComparationPage;
 import com.sikachov.framework.pages.MainPage;
 import com.sikachov.framework.pages.NameSortedProductPage;
@@ -21,6 +22,7 @@ public class NavHelper extends BaseHelper{
 	
 	public static ProductPage getProductPage(WebDriver driver, String product){
 		log("open Product Page " + product);
+		driver.get(Config.BASE_ADDRESS);
 		MainPage p = PageFactory.initElements(driver, MainPage.class);
 		return p.goToProductPage(driver, product);
 	}

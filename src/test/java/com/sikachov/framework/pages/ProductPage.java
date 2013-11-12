@@ -124,7 +124,7 @@ public class ProductPage extends Page {
 	    list.add(name.toLowerCase());
 	}
 
-	list.remove("������");
+	list.remove("скрыть");
 
 	return list;
     }
@@ -146,9 +146,10 @@ public class ProductPage extends Page {
 	showAllButton.click();
     }
 
-    public void openPageWithFunc(String ss) {
+    public ProductPage openPageWithFunc(String ss) {
 	log("open page with function " + ss);
 	driver.findElement(By.linkText(ss)).click();
+	return PageFactory.initElements(driver, ProductPage.class);
     }
 
     public void goToPrices() {

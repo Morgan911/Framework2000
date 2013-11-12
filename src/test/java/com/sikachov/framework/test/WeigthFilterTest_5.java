@@ -16,7 +16,7 @@ public class WeigthFilterTest_5 extends BaseTest{
 	@Test(dataProvider = "catProvider", dataProviderClass = TestDataProvider.class)
 	public void weigthTest(String product, String ss){
 		ProductPage p = NavHelper.getProductPage(driver, product);
-		p.openPageWithFunc(ss);
+		p = p.openPageWithFunc(ss);
 		List<Product> prods = p.getProducts();
 		prods = FilterHelper.getListWithString(ss, prods);
 		

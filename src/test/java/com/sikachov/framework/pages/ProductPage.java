@@ -36,6 +36,7 @@ public class ProductPage extends Page {
     public WebElement lastPage;
     @FindBy(xpath = "//div[2]/div/div/ul/li[2]/a")
     public WebElement next;
+    
 
     @FindBy(xpath = minPriceFilters)
     WebElement minFilters;

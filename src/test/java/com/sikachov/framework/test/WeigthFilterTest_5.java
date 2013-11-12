@@ -20,7 +20,6 @@ public class WeigthFilterTest_5 extends BaseTest{
 		List<Product> prods = p.getProducts();
 		prods = FilterHelper.getListWithString(ss, prods);
 		
-		
 		List<Product> prodsWithFunc = p.getProducts();
 		Assert.assertEquals(prods, prodsWithFunc);
 	}

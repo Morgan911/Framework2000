@@ -9,6 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 import static com.sikachov.framework.helpers.BaseHelper.*;
 public class MainPage extends Page {
 
+	public MainPage(WebDriver driver) {
+	super(driver);
+    }
+
 	public ProductPage goToProductPage(WebDriver driver, String category) {
 		log("open product page");
 		driver.findElement(By.linkText(category)).click();

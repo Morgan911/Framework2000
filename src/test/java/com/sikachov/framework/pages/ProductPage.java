@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.sikachov.framework.factories.MyPageFactory;
 import com.sikachov.framework.objects.Product;
 
 import static com.sikachov.framework.helpers.BaseHelper.*;
@@ -164,9 +165,10 @@ public class ProductPage extends Page {
 	maxFilters.findElement(By.linkText(f2)).click();
     }
 
-    public void openProduct(String name) {
+    public ProductInfoPage openProduct(String name) {
 	log("product opening");
 	driver.findElement(By.partialLinkText(name)).click();
+	return MyPageFactory.getPage(driver, ProductInfoPage.class);
     }
 
     /****************************************************************/

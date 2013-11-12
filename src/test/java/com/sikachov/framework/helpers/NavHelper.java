@@ -20,8 +20,7 @@ import com.sikachov.framework.pages.SearchResultPage;
 public class NavHelper extends BaseHelper {
 
     public static MainPage getMainPage(WebDriver driver) {
-	driver.get(Config.BASE_ADDRESS);
-	return MyPageFactory.getPage(driver, MainPage.class);
+	return MyPageFactory.getPage(driver, MainPage.class).goToMainPage();
     }
 
     public static ProductPage getProductPage(WebDriver driver, String product) {
@@ -32,15 +31,13 @@ public class NavHelper extends BaseHelper {
     public static ProductInfoPage getProductInfoPage(WebDriver driver,
 	    ProductPage p, String productName) {
 	log("open Product Info Page " + productName);
-	p.openProduct(productName);
-	return PageFactory.initElements(driver, ProductInfoPage.class);
+	return p.openProduct(productName);
     }
 
     public static SearchResultPage getSearchResultPage(WebDriver driver,
 	    Page p, String request) {
 	log("open Search Result Page for request " + request);
-	p.search(request);
-	return PageFactory.initElements(driver, SearchResultPage.class);
+	return p.search(request);
     }
 
     public static PricesPage getPricesPage(WebDriver driver, ProductPage p) {

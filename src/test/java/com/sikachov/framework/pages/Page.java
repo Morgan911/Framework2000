@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.sikachov.framework.factories.MyPageFactory;
 public abstract class Page {
 
 	public WebDriver driver;
@@ -30,16 +32,18 @@ public abstract class Page {
 		return new WebDriverWait(driver, 10);
 	}
 
-	public void goToMainPage() {
+	public MainPage goToMainPage() {
 		log("open main page");
 		mainLogo.click();
+		return MyPageFactory.getPage(driver, MainPage.class);
 	}
 	
-	public void search(String request) {
+	public SearchResultPage search(String request) {
 		log("searhing");
 		search.clear();
 		search.sendKeys(request);
 		buttonSearch.click();
+		return MyPageFactory.getPage(driver, SearchResultPage.class);
 	}
 	
 

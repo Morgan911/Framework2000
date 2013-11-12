@@ -21,6 +21,7 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 
     @Override
     public void onTestFailure(ITestResult tr) {
+	System.out.println("SCREEENSHOOOT");
 	DesiredCapabilities caps = new DesiredCapabilities();
 	caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
 

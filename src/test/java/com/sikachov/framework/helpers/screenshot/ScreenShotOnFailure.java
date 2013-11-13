@@ -19,7 +19,7 @@ import static com.sikachov.framework.helpers.BaseHelper.log;
 import com.sikachov.framework.factories.WebDriverFactory;
 
 public class ScreenShotOnFailure extends TestListenerAdapter {
-    
+
     private static WebDriver driver;
 
     @Override
@@ -32,12 +32,10 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	log("dateFormat");
 	String destDir = "../target/surefire-reports/html/screenshots";
 	log("destDir");
-	try {
-	    new File(destDir).createNewFile();
-	} catch (IOException e1) {
-	    e1.printStackTrace();
-	}
-	log("dirDir"); 
+
+	new File(destDir).mkdirs();
+
+	log("dirDir");
 	String destFile = dateFormat.format(new Date()) + ".png";
 	try {
 	    FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));

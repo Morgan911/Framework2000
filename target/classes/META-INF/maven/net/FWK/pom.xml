@@ -33,15 +33,17 @@
 			<artifactId>testng</artifactId>
 			<version>6.8.7</version>
 		</dependency>
+		
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-ie-driver</artifactId>
+			<artifactId>selenium-chrome-driver</artifactId>
 			<version>2.37.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-chrome-driver</artifactId>
+			<artifactId>selenium-ie-driver</artifactId>
 			<version>2.37.1</version>
 		</dependency>
 
@@ -57,12 +59,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
-    		<groupId>com.google.inject</groupId>
-    		<artifactId>guice</artifactId>
-    		<version>3.0</version>
-    		<scope>test</scope>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+			<scope>test</scope>
 		</dependency>
 
 

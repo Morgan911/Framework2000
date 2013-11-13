@@ -39,8 +39,8 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	    e.printStackTrace();
 	}
 	Reporter.setEscapeHtml(false);
-	log("Saved <a href=screenshots/" + destFile
-		+ ">Screenshot</a>");
+	String path = "screenshots/" +destFile;
+	log("<a href = " + path + "><img src =" + path + " width = 100 heigth = 200/></a>");
     }
 
     public static WebDriver getDriver() {

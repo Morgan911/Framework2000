@@ -25,6 +25,7 @@ public abstract class BaseTest {
 	}
 	 
 	public void goToMainPage(){
+	    
 		log("open main page");
 		driver.get(Config.BASE_ADDRESS);
 	}

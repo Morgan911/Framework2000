@@ -25,17 +25,13 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
     @Override
     public void onTestFailure(ITestResult tr) {
 
-	log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
 	File scrFile = ((TakesScreenshot) driver)
 		.getScreenshotAs(OutputType.FILE);
-	DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
-	log("dateFormat");
-	String destDir = "../target/surefire-reports/html/screenshots";
-	log("destDir");
+	DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ssaa");
+
+	String destDir = "target/surefire-reports/html/screenshots";
 
 	new File(destDir).mkdirs();
-
-	log("dirDir");
 	String destFile = dateFormat.format(new Date()) + ".png";
 	try {
 	    FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
@@ -43,7 +39,7 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	    e.printStackTrace();
 	}
 	Reporter.setEscapeHtml(false);
-	Reporter.log("Saved <a href=../screenshots/" + destFile
+	log("Saved <a href=screenshots/" + destFile
 		+ ">Screenshot</a>");
     }
 

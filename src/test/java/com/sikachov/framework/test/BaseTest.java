@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 
 import com.sikachov.framework.configs.Config;
 import com.sikachov.framework.factories.WebDriverFactory;
+import com.sikachov.framework.helpers.screenshot.ScreenShotOnFailure;
 public abstract class BaseTest {
 	protected WebDriver driver;
 
@@ -19,6 +20,7 @@ public abstract class BaseTest {
 		caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
 		driver = WebDriverFactory.getDriver(caps);
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		ScreenShotOnFailure.setDriver(driver);
 		goToMainPage();
 	}
 	 

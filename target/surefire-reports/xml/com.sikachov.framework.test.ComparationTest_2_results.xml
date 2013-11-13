@@ -9,13 +9,13 @@
             <testcase name="setUp" time="0.000" classname="com.sikachov.framework.test.ComparationTest_2">
                 <failure type="org.openqa.selenium.remote.SessionNotFoundException"
                   message="Unexpected error launching Internet Explorer. Browser zoom level was set to 94%. It should be set to 100% (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 4.07 seconds
+Command duration or timeout: 3.95 seconds
 Build info: version: &apos;2.37.1&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-21 09:08:07&apos;
 System info: host: &apos;EPUAKHAW0178&apos;, ip: &apos;10.23.11.94&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_25&apos;
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver"
               >
 <![CDATA[org.openqa.selenium.remote.SessionNotFoundException: Unexpected error launching Internet Explorer. Browser zoom level was set to 94%. It should be set to 100% (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 4.07 seconds
+Command duration or timeout: 3.95 seconds
 Build info: version: '2.37.1', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-21 09:08:07'
 System info: host: 'EPUAKHAW0178', ip: '10.23.11.94', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_25'
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
@@ -35,7 +35,7 @@ Driver info: org.openqa.selenium.ie.InternetExplorerDriver
   com.sikachov.framework.factories.WebDriverFactory.newWebDriver(WebDriverFactory.java:86)
   com.sikachov.framework.factories.WebDriverFactory.getDriver(WebDriverFactory.java:41)
   com.sikachov.framework.factories.WebDriverFactory.getDriver(WebDriverFactory.java:67)
-  com.sikachov.framework.test.BaseTest.setUp(BaseTest.java:22)
+  com.sikachov.framework.test.BaseTest.setUp(BaseTest.java:23)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

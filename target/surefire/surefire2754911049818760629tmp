@@ -1,0 +1,8 @@
+#surefire
+#Wed Nov 13 16:51:29 EET 2013
+webdriver.browser=ie
+user.dir=C\:\\Users\\Serhii_Sikachov\\FrameworkWorkspace\\framework2000\\target
+localRepository=C\:\\Users\\Serhii_Sikachov\\.m2\\repository
+TARGET_BROWSER=ie
+TEST_CHOICE=FridgeSortTest_1.xml
+basedir=C\:\\Users\\Serhii_Sikachov\\FrameworkWorkspace\\framework2000

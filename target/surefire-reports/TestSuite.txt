@@ -1,11 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 0.721 sec <<< FAILURE!
-setUp(com.sikachov.framework.test.FridgeSortTest_1)  Time elapsed: 0 sec  <<< FAILURE!
-java.lang.NullPointerException
-	at com.sikachov.framework.test.BaseTest.goToMainPage(BaseTest.java:32)
-	at com.sikachov.framework.test.BaseTest.setUp(BaseTest.java:22)
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 5.571 sec <<< FAILURE!
+setUp(com.sikachov.framework.test.ComparationTest_2)  Time elapsed: 0 sec  <<< FAILURE!
+org.openqa.selenium.remote.SessionNotFoundException: Unexpected error launching Internet Explorer. Browser zoom level was set to 94%. It should be set to 100% (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3.95 seconds
+Build info: version: '2.37.1', revision: 'a7c61cbd68657e133ae96672cf995890bad2ee42', time: '2013-10-21 09:08:07'
+System info: host: 'EPUAKHAW0178', ip: '10.23.11.94', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_25'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:151)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:216)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:201)
+	at org.openqa.selenium.ie.InternetExplorerDriver.run(InternetExplorerDriver.java:224)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:214)
+	at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:184)
+	at com.sikachov.framework.factories.WebDriverFactory.createLocalDriver(WebDriverFactory.java:108)
+	at com.sikachov.framework.factories.WebDriverFactory.newWebDriver(WebDriverFactory.java:86)
+	at com.sikachov.framework.factories.WebDriverFactory.getDriver(WebDriverFactory.java:41)
+	at com.sikachov.framework.factories.WebDriverFactory.getDriver(WebDriverFactory.java:67)
+	at com.sikachov.framework.test.BaseTest.setUp(BaseTest.java:23)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

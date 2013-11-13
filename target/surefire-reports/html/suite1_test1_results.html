@@ -18,7 +18,7 @@
   <table class="resultsTable configTable">
     <tr><th colspan="3" class="header failedConfig">Failed Configuration</th></tr>
               <tr class="group">
-        <td colspan="3">com.sikachov.framework.test.FridgeSortTest_1</td>
+        <td colspan="3">com.sikachov.framework.test.ComparationTest_2</td>
       </tr>
             
 <tr>
@@ -31,15 +31,31 @@
   <td class="result">
         
     
-            <div class="testOutput">
-                        [LOG] open main page
-                  </div>
-    
+        
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.remote.SessionNotFoundException: Unexpected error launching Internet Explorer. Browser zoom level was set to 94%. It should be set to 100% (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 3.95 seconds<br/>
+Build info: version: &apos;2.37.1&apos;, revision: &apos;a7c61cbd68657e133ae96672cf995890bad2ee42&apos;, time: &apos;2013-10-21 09:08:07&apos;<br/>
+System info: host: &apos;EPUAKHAW0178&apos;, ip: &apos;10.23.11.94&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_25&apos;<br/>
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver</b></a><br />
     <div class="stackTrace" id="exception-0">
-              com.sikachov.framework.test.BaseTest.goToMainPage(BaseTest.java:32)<br />
-              com.sikachov.framework.test.BaseTest.setUp(BaseTest.java:22)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)<br />
+              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+              java.lang.reflect.Constructor.newInstance(Constructor.java:526)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:151)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:216)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:201)<br />
+              org.openqa.selenium.ie.InternetExplorerDriver.run(InternetExplorerDriver.java:224)<br />
+              org.openqa.selenium.ie.InternetExplorerDriver.&lt;init&gt;(InternetExplorerDriver.java:214)<br />
+              org.openqa.selenium.ie.InternetExplorerDriver.&lt;init&gt;(InternetExplorerDriver.java:184)<br />
+              com.sikachov.framework.factories.WebDriverFactory.createLocalDriver(WebDriverFactory.java:108)<br />
+              com.sikachov.framework.factories.WebDriverFactory.newWebDriver(WebDriverFactory.java:86)<br />
+              com.sikachov.framework.factories.WebDriverFactory.getDriver(WebDriverFactory.java:41)<br />
+              com.sikachov.framework.factories.WebDriverFactory.getDriver(WebDriverFactory.java:67)<br />
+              com.sikachov.framework.test.BaseTest.setUp(BaseTest.java:23)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -84,19 +100,19 @@
   <table class="resultsTable" width="100%">
     <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.sikachov.framework.test.FridgeSortTest_1</td>
+        <td colspan="3" class="group">com.sikachov.framework.test.ComparationTest_2</td>
       </tr>
             
 <tr>
   <td class="method">
-                  fridgeSortTest
+                  sameParamsTest
       </td>
   <td class="duration">
     0.001s
   </td>
   <td class="result">
                          
-          <i>Method arguments: </i><span class="arguments">"Холодильники"</span><br />
+          <i>Method arguments: </i><span class="arguments">"Вентиляторы"</span><br />
     
         
 

@@ -42,16 +42,22 @@ public class CompareHelper extends BaseHelper {
 	int n = Integer.parseInt(num);
 	for (int i = 0; i < n; i++) {
 	    p = NavHelper.getProductPage(driver, category);
-	    checkInfoFor(driver, p, list.get(i));
+	    checkInfoFor(driver, p, temp.get(i));
+	    p = NavHelper.getProductPage(driver, category);
+	    checkLinkFor(driver, p, temp.get(i));
 	}
     }
 
-    private static boolean isSameLink(String link1, String link2) {
+    private static void checkLinkFor(WebDriver driver, ProductPage page,
+	    Product p) {
 
-	if (link1.equals(link2)) {
-	    return true;
-	}
-	return false;
+	PricesPage pr = NavHelper.getPricesPage(driver, page);
+	System.out.println("Prices");
+	pr.findProduct(p.getName());
+	String href = pr.getResultItem(0).getAttribute("href");
+
+	Assert.assertEquals(href, p.getHref());
+
     }
 
     private static boolean isSameValid(List<WebElement> sameParams) {
@@ -72,31 +78,34 @@ public class CompareHelper extends BaseHelper {
     }
 
     private static boolean compare(WebElement w) {
-
 	List<WebElement> temp = getSubelements(w, tagName);
-	String el1 = temp.get(1).getText();
-	String el2 = temp.get(2).getText();
-	System.out.println(el1 + "<<--el1  el2-->> " + el2);
-	if (el1.trim().equals(el2.trim()))
-	    return true;
-	return false;
+	 String el1 = temp.get(temp.size()-1).getText();
+	 System.out.println("El1====>>>>" + el1 );
+	for(int i = 1; i < temp.size(); i++){
+	    String el2 = temp.get(i).getText();
+	    System.out.println("El"+ i +"====>>>>" + el2);
+		if (!el1.trim().equals(el2.trim()))
+		    return false;
+	}
+	return true;
     }
 
     public static void checkInfoFor(WebDriver driver, ProductPage page,
 	    Product p) {
 	String productName = p.getName();
+	System.out.println("Name --->> " + productName);
 	ProductInfoPage info = NavHelper.getProductInfoPage(driver, page,
 		productName);
 	String[] s = p.getDescription().split(";");
+	System.out.println("Splited");
 	List<String> in = info.getInfo();
+	System.out.println("info");
 	for (int k = 2; k < 4; k++) {
+	    System.out.println("loop" + k);
 	    String str = s[k].toLowerCase().trim();
 	    Assert.assertEquals(in.contains(str), true);
 	}
-	PricesPage pr = NavHelper.getPricesPage(driver, page);
-	pr.findProduct(p.getName());
-	String href = pr.getResultItem(0).getAttribute("href");
+	System.out.println("loopEnd");
 
-	Assert.assertEquals(href, p.getHref());
     }
 }

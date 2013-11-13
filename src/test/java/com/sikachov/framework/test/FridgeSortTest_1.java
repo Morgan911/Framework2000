@@ -1,11 +1,9 @@
 package com.sikachov.framework.test;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.sikachov.framework.helpers.NavHelper;
@@ -18,7 +16,7 @@ public class FridgeSortTest_1 extends BaseTest {
 
     @Test(dataProvider = "catProvider", dataProviderClass = TestDataProvider.class)
     public void fridgeSortTest(String category) {
-	List<Product> productsUnsorted = null;
+	List<Product> productsUnsorted = new ArrayList<Product>();
 	ProductPage productPage = NavHelper.getProductPage(driver, category);
 	List<Product> productsSortedByName = productPage.sortByName()
 		.getProducts();

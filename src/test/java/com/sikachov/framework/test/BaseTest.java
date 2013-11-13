@@ -19,17 +19,17 @@ public abstract class BaseTest {
     public void setUp() {
 	DesiredCapabilities caps = new DesiredCapabilities();
 	caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
-	goToMainPage();
+	
 	driver = WebDriverFactory.getDriver(caps);
 	driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 	ScreenShotOnFailure.setDriver(driver);
-	
+	goToMainPage();
     }
 
     public void goToMainPage() {
 	System.setProperty("org.uncommons.reportng.escape-output", "false");
 	log("open main page");
-	driver.navigate().to(Config.BASE_ADDRESS);
+	driver.get(Config.BASE_ADDRESS);
     }
 
 }

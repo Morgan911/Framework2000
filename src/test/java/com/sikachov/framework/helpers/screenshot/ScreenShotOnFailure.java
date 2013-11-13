@@ -32,9 +32,9 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	log("dateFormat");
 	String destDir = "target/surefire-reports/screenshots";
 	log("destDir");
-	new File(destDir).mkdirs();
+	new File(destDir).mkdir();
+	log("dirDir"); 
 	String destFile = dateFormat.format(new Date()) + ".png";
-	log("destFile");
 	try {
 	    FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
 	} catch (IOException e) {

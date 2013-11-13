@@ -29,7 +29,7 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 		.getScreenshotAs(OutputType.FILE);
 	DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ssaa");
 
-	String destDir = "target/surefire-reports/html/screenshots/";
+	String destDir = "../target/surefire-reports/html/screenshots/";
 
 	new File(destDir).mkdirs();
 	String destFile = dateFormat.format(new Date()) + ".png";

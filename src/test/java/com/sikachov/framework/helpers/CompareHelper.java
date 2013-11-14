@@ -79,13 +79,13 @@ public class CompareHelper extends BaseHelper {
 
     private static boolean compare(WebElement w) {
 	List<WebElement> temp = getSubelements(w, tagName);
-	 String el1 = temp.get(temp.size()-1).getText();
-	 System.out.println("El1====>>>>" + el1 );
-	for(int i = 1; i < temp.size(); i++){
+	String el1 = temp.get(temp.size() - 1).getText();
+	System.out.println("El1====>>>>" + el1);
+	for (int i = 1; i < temp.size(); i++) {
 	    String el2 = temp.get(i).getText();
-	    System.out.println("El"+ i +"====>>>>" + el2);
-		if (!el1.trim().equals(el2.trim()))
-		    return false;
+	    System.out.println("El" + i + "====>>>>" + el2);
+	    if (!el1.trim().equals(el2.trim()))
+		return false;
 	}
 	return true;
     }

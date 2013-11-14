@@ -179,12 +179,10 @@ public class ProductPage extends Page {
     private Product convertRowToProduct(WebElement element) {
 	String name = element.findElement(By.className("name")).getText();
 	String price = element.findElement(By.className("price")).getText();
-	System.out.println("Priiiiiiiiiice--->>"+price);
 	String description = element.findElement(By.className("description"))
 		.getText();
 	String href = element.findElement(By.cssSelector(".name a"))
 		.getAttribute("href");
-	System.out.println("HREEEEEEEEEFFFF = >>> " + href);
 	price = price.replace(" ", "");
 	price = price.substring(0, price.indexOf("г"));
 	Double dprice = Double.parseDouble(price);

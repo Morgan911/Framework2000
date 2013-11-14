@@ -1,56 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test"
            tests="1"
-           failures="1"
+           failures="0"
            errors="0"
            skipped="0"
-           time="652.811">
+           time="2557.435">
   <properties />
-            <testcase name="fridgeSortTest" time="652.811" classname="com.sikachov.framework.test.FridgeSortTest_1">
-                <failure type="java.lang.IndexOutOfBoundsException"
-                  message="Source does not fit in dest"
-              >
-<![CDATA[java.lang.IndexOutOfBoundsException: Source does not fit in dest
-  java.util.Collections.copy(Collections.java:589)
-  com.sikachov.framework.test.FridgeSortTest_1.fridgeSortTest(FridgeSortTest_1.java:23)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:606)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-  org.testng.TestRunner.privateRun(TestRunner.java:767)
-  org.testng.TestRunner.run(TestRunner.java:617)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-  org.testng.SuiteRunner.run(SuiteRunner.java:240)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-  org.testng.TestNG.run(TestNG.java:1057)
-  org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:122)
-  org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:88)
-  org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:104)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:606)
-  org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
-  com.sun.proxy.$Proxy0.invoke(Unknown Source)
-  org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
-  org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
-  org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-]]>
-      </failure>
-
-          </testcase>
   
   
-  
+            <testcase name="fridgeSortTest" time="2557.435" classname="com.sikachov.framework.test.FridgeSortTest_1" />
+      
 </testsuite>

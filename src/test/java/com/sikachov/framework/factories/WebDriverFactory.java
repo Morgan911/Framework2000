@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverFactory {
@@ -108,6 +109,9 @@ public class WebDriverFactory {
       return new InternetExplorerDriver(capabilities);
     if (browserType.equals("chrome"))
       return new ChromeDriver(capabilities);
+    if (browserType.equals("opera")){
+	return new RemoteWebDriver(DesiredCapabilities.opera());
+    }
     throw new Error("Unrecognized browser type: " + browserType);
   }
 

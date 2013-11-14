@@ -25,6 +25,12 @@ public class ProductPage extends Page {
     private static final String pageSubHeader = "page-subheader";
     private static final String minPriceFilters = "//div[3]/div[2]";
     private static final String maxPriceFilters = "//div[4]/div[2]";
+    
+    @FindBy(className = "last")
+    public WebElement lastPage;
+    @FindBy(xpath = "//div[2]/div/div/ul/li[2]/a")
+    public WebElement next;
+
     @FindBy(linkText = sortByNameLink)
     WebElement sortByName;
     @FindBy(linkText = sortByPriceLink)
@@ -33,17 +39,10 @@ public class ProductPage extends Page {
     WebElement subHeader;
     @FindBy(className = "item")
     List<WebElement> products;
-    @FindBy(className = "last")
-    public WebElement lastPage;
-    @FindBy(xpath = "//div[2]/div/div/ul/li[2]/a")
-    public WebElement next;
-    
-
     @FindBy(xpath = minPriceFilters)
     WebElement minFilters;
     @FindBy(xpath = maxPriceFilters)
     WebElement maxFilters;
-
     @FindBy(xpath = "//div/div/div/div[2]/div[5]/div[2]/a")
     List<WebElement> producers;
     @FindBy(xpath = "//div/div[3]/div/div/div/div[2]/div[5]/div[2]/div[3]/a")
@@ -65,7 +64,7 @@ public class ProductPage extends Page {
     }
 
     public List<Product> getProducts(int k) {
-	log("get all products from page");
+	log("Get all products from page");
 	List<Product> prods = new ArrayList<Product>();
 	int i = 1;
 
@@ -178,13 +177,12 @@ public class ProductPage extends Page {
 
     private Product convertRowToProduct(WebElement element) {
 	String name = element.findElement(By.className("name")).getText();
-	String price = element.findElement(By.className("price")).getText();
+	String price = element.findElement(By.cssSelector(".price strong")).getText();
 	String description = element.findElement(By.className("description"))
 		.getText();
 	String href = element.findElement(By.cssSelector(".name a"))
 		.getAttribute("href");
-	price = price.replace(" ", "");
-	price = price.substring(0, price.indexOf("г"));
+	price = price.replaceAll("[a-zA-Zа-яА-Я ]", "");
 	Double dprice = Double.parseDouble(price);
 	Product tmp = new Product(name, href, dprice, description);
 	return tmp;

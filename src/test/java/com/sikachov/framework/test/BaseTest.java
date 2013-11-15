@@ -28,7 +28,6 @@ public abstract class BaseTest {
 
     public void goToMainPage() {
 	System.setProperty("org.uncommons.reportng.escape-output", "false");
-	log("open main page");
 	driver.get(Config.BASE_ADDRESS);
     }
 

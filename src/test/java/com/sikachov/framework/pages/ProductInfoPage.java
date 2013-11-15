@@ -11,9 +11,6 @@ import static com.sikachov.framework.helpers.BaseHelper.*;
 
 public class ProductInfoPage extends Page {
 
-    public ProductInfoPage(WebDriver driver) {
-	super(driver);
-    }
 
     public static String productName;
 

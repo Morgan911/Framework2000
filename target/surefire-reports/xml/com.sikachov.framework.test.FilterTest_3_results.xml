@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="37.879">
+           time="63.458">
   <properties />
   
   
-            <testcase name="filterTest" time="20.035" classname="com.sikachov.framework.test.FilterTest_3" />
-                <testcase name="filterTest" time="17.844" classname="com.sikachov.framework.test.FilterTest_3" />
+            <testcase name="filterTest" time="33.795" classname="com.sikachov.framework.test.FilterTest_3" />
+                <testcase name="filterTest" time="29.663" classname="com.sikachov.framework.test.FilterTest_3" />
       
 </testsuite>

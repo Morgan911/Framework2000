@@ -7,6 +7,7 @@ import java.util.List;
 import org.testng.annotations.Test;
 
 import com.sikachov.framework.helpers.NavHelper;
+import com.sikachov.framework.helpers.ProductPageHelper;
 import com.sikachov.framework.helpers.SortHelper;
 import com.sikachov.framework.helpers.TestDataProvider;
 import com.sikachov.framework.objects.Product;
@@ -18,12 +19,12 @@ public class FridgeSortTest_1 extends BaseTest {
     public void fridgeSortTest(String category) {
 	List<Product> productsUnsorted = new ArrayList<Product>();
 	ProductPage productPage = NavHelper.getProductPage(driver, category);
-	List<Product> productsSortedByName = productPage.sortByName()
-		.getProducts();
+	productPage.sortByName();
+	List<Product> productsSortedByName = ProductPageHelper.getProducts(productPage);
 	productsUnsorted.addAll(productsSortedByName);
 	SortHelper.verifyNameSorting(productsUnsorted, productsSortedByName);
-	List<Product> productsSortedByPrice = productPage.sortByPrice()
-		.getProducts();
+	productPage.sortByPrice();
+	List<Product> productsSortedByPrice = ProductPageHelper.getProducts(productPage);
 	SortHelper.verifyPriceSorting(productsUnsorted, productsSortedByPrice);
     }
 

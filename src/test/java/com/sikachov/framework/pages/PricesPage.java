@@ -10,10 +10,6 @@ import static com.sikachov.framework.helpers.BaseHelper.*;
 
 public class PricesPage extends Page {
 
-    public PricesPage(WebDriver driver) {
-	super(driver);
-    }
-
     @FindBy(className = "styled-result-table")
     WebElement resultTable;
     @FindBy(id = "edit-name-1")

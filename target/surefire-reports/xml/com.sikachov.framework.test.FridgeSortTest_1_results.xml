@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="2557.435">
+           time="103.709">
   <properties />
   
   
-            <testcase name="fridgeSortTest" time="2557.435" classname="com.sikachov.framework.test.FridgeSortTest_1" />
+            <testcase name="fridgeSortTest" time="103.709" classname="com.sikachov.framework.test.FridgeSortTest_1" />
       
 </testsuite>

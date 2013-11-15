@@ -23,22 +23,21 @@ public class CompareHelper extends BaseHelper {
     public static void verifySameParams(List<WebElement> sameParams) {
 	Boolean actual = isSameValid(sameParams);
 	Boolean expected = true;
-
 	Assert.assertEquals(actual, expected);
+	log("Same parameters are valid");
     }
 
     public static void verifyDifferentParams(List<WebElement> different) {
 	Boolean actual = isDifferentValid(different);
 	Boolean expected = true;
-
 	Assert.assertEquals(actual, expected);
+	log("Different parameters are valid");
     }
 
-    public static void veryfyTextOnPages(WebDriver driver, String category,
+    public static void veryfyTextOnPages(List<Product> products, String category,
 	    String num) {
-	ProductPage p = NavHelper.getProductPage(driver, category);
 	List<Product> list = new ArrayList<Product>();
-	List<Product> temp = p.getProducts(1);
+	List<Product> temp = products;
 	int n = Integer.parseInt(num);
 	for (int i = 0; i < n; i++) {
 	    p = NavHelper.getProductPage(driver, category);
@@ -55,9 +54,8 @@ public class CompareHelper extends BaseHelper {
 	System.out.println("Prices");
 	pr.findProduct(p.getName());
 	String href = pr.getResultItem(0).getAttribute("href");
-
 	Assert.assertEquals(href, p.getHref());
-
+	log("Links compared successfully");
     }
 
     private static boolean isSameValid(List<WebElement> sameParams) {
@@ -80,32 +78,25 @@ public class CompareHelper extends BaseHelper {
     private static boolean compare(WebElement w) {
 	List<WebElement> temp = getSubelements(w, tagName);
 	String el1 = temp.get(temp.size() - 1).getText();
-	System.out.println("El1====>>>>" + el1);
 	for (int i = 1; i < temp.size(); i++) {
 	    String el2 = temp.get(i).getText();
-	    System.out.println("El" + i + "====>>>>" + el2);
 	    if (!el1.trim().equals(el2.trim()))
 		return false;
 	}
 	return true;
     }
 
-    public static void checkInfoFor(WebDriver driver, ProductPage page,
+    public static void checkInfoFor(ProductPage page,
 	    Product p) {
 	String productName = p.getName();
-	System.out.println("Name --->> " + productName);
-	ProductInfoPage info = NavHelper.getProductInfoPage(driver, page,
+	ProductInfoPage info = NavHelper.getProductInfoPage(, page,
 		productName);
 	String[] s = p.getDescription().split(";");
-	System.out.println("Splited");
 	List<String> in = info.getInfo();
-	System.out.println("info");
 	for (int k = 2; k < 4; k++) {
-	    System.out.println("loop" + k);
 	    String str = s[k].toLowerCase().trim();
 	    Assert.assertEquals(in.contains(str), true);
 	}
-	System.out.println("loopEnd");
-
+	log("Description in on the product page");
     }
 }

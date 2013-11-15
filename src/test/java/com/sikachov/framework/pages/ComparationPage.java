@@ -10,11 +10,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class ComparationPage extends Page {
 
-    public ComparationPage(WebDriver driver) {
-	super(driver);
-
-    }
-
     private String isOnElement = "//html/body/div[2]/div[3]/div/div[4]/div[2]/div/div[2]/table/tbody/tr/th/div/span/a";
     int productNum = 2;
 

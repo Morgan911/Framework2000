@@ -1,5 +1,8 @@
 package com.sikachov.framework.test;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import com.sikachov.framework.helpers.CompareHelper;
@@ -15,7 +18,8 @@ public class ComparationTest_2 extends BaseTest {
 	@Test(dataProvider = "catProvider", dataProviderClass = TestDataProvider.class)
 	public void sameParamsTest(String category) {
 		ProductPage productPage = NavHelper.getProductPage(driver, category);
-		p = NavHelper.getComparationPage(driver, productPage, 3);
+		List<WebElement> els = productPage.getProducts(3);
+		p = NavHelper.getComparationPage(driver, els);
 		CompareHelper.verifySameParams(p.getSameParams());
 		CompareHelper.verifyDifferentParams(p.getDifferentParams());
 	}

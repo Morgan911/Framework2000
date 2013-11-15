@@ -1,0 +1,9 @@
+#surefire
+#Thu Nov 14 16:33:03 EET 2013
+webdriver.browser=firefox
+URL_CHOICE=http\://pn.com.ua/
+user.dir=C\:\\Users\\Serhii_Sikachov\\FrameworkWorkspace\\framework2000\\target
+localRepository=C\:\\Users\\Serhii_Sikachov\\.m2\\repository
+TARGET_BROWSER=firefox
+TEST_CHOICE=WeigthFilterTest_5.xml
+basedir=C\:\\Users\\Serhii_Sikachov\\FrameworkWorkspace\\framework2000

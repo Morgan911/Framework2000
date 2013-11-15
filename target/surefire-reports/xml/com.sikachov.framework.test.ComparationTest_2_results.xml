@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="8.179">
+           time="14.817">
   <properties />
   
   
-            <testcase name="sameParamsTest" time="8.179" classname="com.sikachov.framework.test.ComparationTest_2" />
+            <testcase name="sameParamsTest" time="14.817" classname="com.sikachov.framework.test.ComparationTest_2" />
       
 </testsuite>

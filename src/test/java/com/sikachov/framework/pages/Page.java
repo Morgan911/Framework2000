@@ -25,10 +25,6 @@ public abstract class Page {
     @FindBy(className = "mlogo")
     public WebElement mainLogo;
 
-    public Page(WebDriver driver) {
-	this.driver = driver;
-    }
-
     public WebDriverWait wait_() {
 	return new WebDriverWait(driver, 10);
     }

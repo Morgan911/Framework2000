@@ -43,10 +43,9 @@ public class NavHelper extends BaseHelper {
 	return p.goToPrices();
     }
 
-    public static ComparationPage getComparationPage(WebDriver driver,
-	    ProductPage p, int num) {
-	log("open Comparation Page");
-	List<WebElement> l = p.getWebElementProducts(num);
+    public static ComparationPage getComparationPage(WebDriver driver, List<WebElement> compareList) {
+	log("Open Comparation Page");
+	List<WebElement> l = compareList;
 	for (WebElement w : l) {
 	    w.findElement(By.className("compare_add_link")).click();
 	}

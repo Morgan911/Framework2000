@@ -22,28 +22,26 @@ public class FilterHelper {
 		}
 	}
 
-	public static void verifyProducersInFilter(ProductPage p) {
-		List<String> names = p.getProductProducers();
-		List<String> prods = p.getProducers();
-		Collections.sort(names);
-		Collections.sort(prods);
-		Assert.assertEquals(names, prods);
+	public static void verifyProducersInFilter(List<String> productProducers, List<String> allProducers) {
+		List<String> productProds = productProducers;
+		List<String> allProds = allProducers;
+		Collections.sort(productProds);
+		Collections.sort(allProds);
+		Assert.assertEquals(productProds, allProds);
 	}
 	
 	private static Boolean isPriceInRange(Double price, Double a, Double b) {
 		return ((price >= a) && (price < b));
 	}
 	
-	public static void verifyTextPresent( ProductPage p, String str) {
-		List<Product> prods = p.getProducts();
+	public static void verifyTextPresent(List<Product> allProducts, List<Product> productssWithFunc, String str) {
+		List<Product> prods = allProducts;
 		prods = getListWithString(str, prods);
-		
-		p.openPageWithFunc(str);
-		List<Product> prodsWithFunc = p.getProducts();
+		List<Product> prodsWithFunc = productssWithFunc;
 		Assert.assertEquals(prods, prodsWithFunc);
 	}
 	
-	public static List<Product> getListWithString(String str, List<Product> from) {
+	private static List<Product> getListWithString(String str, List<Product> from) {
 		List<Product> list = new ArrayList<Product>();
 		for (Product p : from) {
 			if (p.getDescription().contains(str)) {

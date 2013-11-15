@@ -8,12 +8,8 @@ import org.openqa.selenium.WebDriver;
 import com.sikachov.framework.factories.MyPageFactory;
 public class MainPage extends Page {
 
-	public MainPage(WebDriver driver) {
-	super(driver);
-    }
-
 	public ProductPage goToProductPage(String category) {
-		log("open product page");
+		log("Open product page " + category);
 		driver.findElement(By.linkText(category)).click();
 		return MyPageFactory.getPage(driver, ProductPage.class);
 	}
